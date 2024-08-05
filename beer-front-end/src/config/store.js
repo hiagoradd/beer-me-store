@@ -7,14 +7,10 @@ import { initialState } from './reducers';
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: {
-    counter: rootReducer
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
-  preloadedState: {
-    ...initialState
-  }
+  preloadedState: initialState
 });
 sagaMiddleware.run(saga);
 

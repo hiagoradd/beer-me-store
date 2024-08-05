@@ -1,3 +1,8 @@
 export const ACTION_TYPES = {
-  ADD_ITEM_TO_CART: 'ADD_ITEM_TO_CART'
+  FETCH_PRODUCTS_LIST: 'FETCH_PRODUCTS_LIST',
+  SET_PRODUCTS_LIST: 'SET_PRODUCTS_LIST'
 };
+
+export const fetchProductsList = () => ({
+  type: ACTION_TYPES.FETCH_PRODUCTS_LIST
+});
