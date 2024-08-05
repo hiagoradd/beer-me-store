@@ -10,7 +10,7 @@ export const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ACTION_TYPES.FETCH_PRODUCTS_LIST:
+    case ACTION_TYPES.SET_PRODUCTS_LIST:
       return {
         ...state,
         productsList: action.payload.data

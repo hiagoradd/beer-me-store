@@ -4,9 +4,12 @@ const products = require('./database/products').default;
 const stockPrice = require('./database/stock-price').default;
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
-const port = 6000;
+const port = 4000;
+
+app.use(cors());
 
 app.get('/api/products', (req, res) => {
   res.send(products);
