@@ -2,7 +2,6 @@ import { all, takeLatest } from 'redux-saga/effects';
 import { ACTION_TYPES } from './actions';
 
 function* handleFetchProductsList(action) {
-  console.log('TO AUI PORRA');
   // fetch('http://localhost:3001/products')
   //   .then(response => response.json())
   //   .then(data => {
