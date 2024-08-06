@@ -14,7 +14,7 @@ function ProductListItem(props) {
         </div>
         <div className='bottom-container'>
           <div className={'price'}>
-            ${(26.40123).toFixed(2)}
+            ${(product.minPrice / 100).toFixed(2)}
           </div>
           <div className={'add-button'} onClick={() => onAddClicked()}>
             <img src={'assets/icons/add.svg'} alt={'+'} />

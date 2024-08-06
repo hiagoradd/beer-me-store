@@ -1,42 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './product-detail.scss';
 import PreLoader from '../../preloader/preloader';
 import { AppBody } from '../../layout/layout';
+import { getUpdatedSku } from '../../../config/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 function ProductDetail() {
-  const { productData: paramsData } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedSku, setSelectedSku] = useState(0);
+  const detailedPricing = useSelector(state => state.detailedPricing);
+  console.log('🚀 ~ detailedPricing:', detailedPricing);
+  const dispatch = useDispatch();
   const location = useLocation();
 
   useEffect(() => {
-    // const data = location.state.product || {
-    //   id: 127,
-    //   brand: "Modelo Especial",
-    //   image: "/products/modelo-especial.jpeg",
-    //   style: "Lager",
-    //   substyle: "Light Lager",
-    //   abv: "4.4%",
-    //   origin: "Import",
-    //   information: "#2 selling imported beer in the US with nearly 60 million cases in annual sales (2), growing more than 15 million cases over the past 2 years (3). A full flavored Mexican lager consistently delivering a crisp, clean taste that has stood the test of time for 90 years. Modelo Especial embodies substance with style - a straightforward, uncomplicated and consistent experience with an understated style.\nModelo Especial earned the 2012 Market Watch \"Beer Brand of the Year\" due to 20 straight years of double-digit growth earning.",
-    //   skus: [
-    //     {
-    //       code: "10167",
-    //       name: "12 - 24oz Cans",
-    //     },
-    //     {
-    //       code: "10166",
-    //       name: "18 - 12oz Cans",
-    //     },
-    //     {
-    //       code: "10170",
-    //       name: "Half Barrel",
-    //     },
-    //   ],
-    // };
+    const interval = setInterval(() => {
+      dispatch(getUpdatedSku(product.skus[selectedSku].code));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [dispatch, product, selectedSku]);
+
+
+  useEffect(() => {
     setProduct(location.state.product);
-  }, [location.state.product]);
+    dispatch(getUpdatedSku(location.state.product.skus[selectedSku].code));
+  }, [location.state.product, dispatch, selectedSku]);
 
   if (!product) return <PreLoader />;
 
@@ -51,10 +40,12 @@ function ProductDetail() {
             <div className={'top-content'}>
               <div className={'top-info'}>
                 <h6>{product.brand}</h6>
-                <div className={'price'}>${(34.443).toFixed(2)}</div>
+                <div className={'price'}>
+                  {detailedPricing.price == null ? <PreLoader size={'20'} /> : `$${(detailedPricing.price / 100).toFixed(2)}`}
+                </div>
               </div>
               <div className={'sub-info light-text'}>
-                Origin: {product.origin} | Stock: {123}
+                Origin: {product.origin} | Stock: {detailedPricing.stock || '-'}
               </div>
             </div>
             <div className='description'>

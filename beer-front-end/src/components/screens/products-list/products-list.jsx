@@ -7,7 +7,7 @@ import ProductListItem from '../../product-list-item/product-list-item';
 import { AppBody } from '../../layout/layout';
 import { useNavigate } from 'react-router-dom';
 
-function ProductsList (props) {
+function ProductsList () {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { productsList, user } = useSelector(state => ({

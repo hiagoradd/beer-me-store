@@ -6,6 +6,10 @@ export const initialState = {
     name: 'Michael',
     style: 'Mr'
   },
+  detailedPricing: {
+    stock: null,
+    price: null
+  },
   productsList: null
 };
 
@@ -15,6 +19,12 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         productsList: action.payload.data
+      };
+
+    case ACTION_TYPES.SET_DETAILED_PRICING:
+      return {
+        ...state,
+        detailedPricing: action.payload.data
       };
 
     default:

@@ -12,7 +12,19 @@ const port = 4000;
 app.use(cors());
 
 app.get('/api/products', (req, res) => {
-  res.send(products);
+  const productsToSend = products.map(product => {
+    const newData = product
+    product.skus.forEach(sku => {
+      newData.minPrice = stockPrice[sku.code].price;
+    })
+    return newData;
+  });
+  res.send(productsToSend);
+})
+
+app.get('/api/products/:id', (req, res) => {
+  const item = products.find(it => it.id === parseInt(req.params.id));
+  res.send(item);
 })
 
 app.get('/api/stock-price/:sku', (req, res) => {
