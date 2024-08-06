@@ -13,12 +13,12 @@ function PageHeader() {
           <>
             <img onClick={() => navigate(-1)} className={'back-icon'} src={'/assets/icons/back-icon.svg'} alt={'<-'} />
             <h5>Detail</h5>
-            <img className={'icon-dots'} src={'/assets/icons/icon-dots.svg'} alt={'...'} />
+            <img className={'icon-dots'} src={'/assets/icons/icon-dots.svg'} alt={'...'} onClick={() => window.alert('Open details')} />
           </>
         ) : (
           <>
-            <img className='menu-icon' src={'/assets/icons/menu-icon.svg'} alt={'menu'} />
-            <img className='perfil-picture' src={'/assets/icons/profile-picture.jpg'} alt={'profile-picture'} />
+            <img onClick={() => window.alert('Open menu')} className='menu-icon' src={'/assets/icons/menu-icon.svg'} alt={'menu'} />
+            <img onClick={() => window.alert('Open profile')} className='perfil-picture' src={'/assets/icons/profile-picture.jpg'} alt={'profile-picture'} />
           </>
         )}
       </div>

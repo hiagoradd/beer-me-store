@@ -10,7 +10,6 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [selectedSku, setSelectedSku] = useState(0);
   const detailedPricing = useSelector(state => state.detailedPricing);
-  console.log('🚀 ~ detailedPricing:', detailedPricing);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -28,6 +27,10 @@ function ProductDetail() {
   }, [location.state.product, dispatch, selectedSku]);
 
   if (!product) return <PreLoader />;
+
+  const addToCart = () => {
+    window.alert(`Added to cart: ${product.brand} - ${product.skus[selectedSku].name}`);
+  };
 
   return (
     <AppBody>
@@ -63,8 +66,8 @@ function ProductDetail() {
               </div>
             </div>
             <div className={'buying-container'}>
-              <img className='add-to-bag' src={`/assets/icons/add-to-bag.svg`} alt={product.brand} />
-              <div className={'add-to-cart-button'}>
+              <img className='add-to-bag' src={`/assets/icons/add-to-bag.svg`} alt={product.brand} onClick={() => addToCart()} />
+              <div className={'add-to-cart-button'} onClick={() => addToCart()}>
                 Add to cart
               </div>
             </div>
