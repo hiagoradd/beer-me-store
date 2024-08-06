@@ -10,7 +10,6 @@ function ProductListItem(props) {
       <div className='inner-content'>
         <h3>{product.brand}</h3>
         <div className={'img-container'}>
-          {/* <img src={`/assets/products/budweiser.jpg`} alt={product.brand} /> */}
           <img src={`/assets/${product.image}`} alt={product.brand} />
         </div>
         <div className='bottom-container'>
@@ -18,7 +17,7 @@ function ProductListItem(props) {
             ${(26.40123).toFixed(2)}
           </div>
           <div className={'add-button'} onClick={() => onAddClicked()}>
-            <img src={'assets/icons/add.svg'} />
+            <img src={'assets/icons/add.svg'} alt={'+'} />
           </div>
         </div>
       </div>

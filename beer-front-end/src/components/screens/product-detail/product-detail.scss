@@ -1,0 +1,128 @@
+@import '../../../styles/colors';
+
+.product-detail-container {
+  .inner-container {}
+
+  .product-img-wrapper {
+    height: 240px;
+
+    .product-img {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      max-height: 240px !important;
+      object-fit: contain;
+      display: block;
+      float: unset !important;
+    }
+  }
+
+  .second-title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 22px 0px 0px;
+  }
+
+  p,
+  .light-text {
+    margin: 0px 0px 16px;
+    color: $very-light-grey;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .border-bg {
+    background-color: #fff;
+    border-radius: 48px;
+    margin-top: 10px;
+    padding: 0px 10px 15px;
+  }
+
+  .top-content {
+    display: flex;
+    flex-direction: column;
+
+    .top-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 55px;
+
+      h6 {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 31px;
+        text-align: left;
+        margin: 0px;
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 31px;
+        color: $orange
+      }
+    }
+  }
+
+  .size {
+    .sizes-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .size-item {
+        width: max-content;
+        border-radius: 15px;
+        border: 1px solid $very-light-grey;
+        color: $very-light-grey;
+        margin-left: 14px;
+        padding: 5px 12px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: center;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+
+        &.selected {
+          color: $orange;
+          border: 1px solid $orange;
+        }
+      }
+    }
+  }
+
+  .buying-container {
+    margin-top: 49px;
+    display: flex;
+    justify-content: space-between;
+
+    .add-to-bag {
+      cursor: pointer;
+      width: 54px;
+      height: 54px;
+    }
+
+    .add-to-cart-button {
+      cursor: pointer;
+      width: calc(100%);
+      margin-left: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: center;
+      color: #fff;
+      background-color: #FF9F24;
+      border-radius: 12px;
+      padding: 19px;
+    }
+  }
+}

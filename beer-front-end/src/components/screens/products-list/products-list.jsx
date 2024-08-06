@@ -21,7 +21,7 @@ function ProductsList (props) {
 
   const onItemAddClicked = (item) => {
     const brandName = item.brand.toLowerCase().replace(' ', '-');
-    navigate(`/product/${item.id}-${brandName}`);
+    navigate(`/product/${item.id}-${brandName}`, { state: { product: item } });
   };
 
   return (
