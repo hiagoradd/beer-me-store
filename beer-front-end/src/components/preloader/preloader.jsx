@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const PreLoader = () => (
-  <div className="preloader-wrapper">
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh' }}>
     <svg width="120" height="120" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#FF9F24">
       <g fill="none" fillRule="evenodd">
         <g transform="translate(1 1)" strokeWidth="2">

@@ -2,10 +2,11 @@ import { ACTION_TYPES } from './actions';
 
 export const initialState = {
   user: {
-    id: null,
-    name: null
+    id: 1,
+    name: 'Michael',
+    style: 'Mr'
   },
-  productsList: []
+  productsList: null
 };
 
 const rootReducer = (state = initialState, action) => {

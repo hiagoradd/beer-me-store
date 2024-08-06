@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchProductsList } from '../../config/actions';
+import { fetchProductsList } from '../../../config/actions';
 
 function ProductDetail() {
   const { productData: paramsData } = useParams();

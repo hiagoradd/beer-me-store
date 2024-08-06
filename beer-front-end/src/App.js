@@ -1,23 +1,19 @@
 
 import './App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ProductDetail from './components/product-detail/product-detail';
-import ProductsList from './components/products-list/products-list';
-
-// const ProductsList = Loadable({
-//   loader: () => import(/* webpackChunkName: "myProfile" */ 'app/modules/my-profile'),
-//   loading: () => <PreLoader />
-// });
-
+import ProductDetail from './components/screens/product-detail/product-detail';
+import ProductsList from './components/screens/products-list/products-list';
+import PageHeader from './components/page-header/page-header';
 
 function App() {
   return (
     <div className="App">
+      <PageHeader />
       <BrowserRouter>
         <Routes>
           <Route path="/products" element={<ProductsList />} />
           <Route path="/product/:productData" element={<ProductDetail />} />
-          {/* <Route path="*" element={<Navigate to="/products" />} /> */}
+          <Route path="*" element={<Navigate to="/products" />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,6 +4,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import store from './config/store';
+import './index.scss';
+import './App.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

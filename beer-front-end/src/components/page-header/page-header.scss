@@ -1,0 +1,27 @@
+.page-header {
+  width: 100vw;
+  position: sticky;
+
+  .inner-container {
+    max-width: 600px;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    .menu-icon, .perfil-picture {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .menu-icon {
+    }
+
+    .perfil-picture {
+      border-radius: 50%;
+    }
+  }
+}
