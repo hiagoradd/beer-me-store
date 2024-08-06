@@ -8,8 +8,8 @@ import PageHeader from './components/page-header/page-header';
 function App() {
   return (
     <div className="App">
-      <PageHeader />
       <BrowserRouter>
+        <PageHeader />
         <Routes>
           <Route path="/products" element={<ProductsList />} />
           <Route path="/product/:productData" element={<ProductDetail />} />

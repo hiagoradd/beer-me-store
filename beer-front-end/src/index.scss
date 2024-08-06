@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600&display=swap');
+@import 'styles/colors';
 
 body {
   margin: 0;
@@ -7,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FAFAFA;
+  color: $primary-black;
 }
 
 code {

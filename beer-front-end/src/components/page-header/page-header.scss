@@ -11,13 +11,18 @@
     display: flex;
     justify-content: space-between;
 
-    .menu-icon, .perfil-picture {
+    img {
       width: 40px;
       height: 40px;
       cursor: pointer;
     }
 
-    .menu-icon {
+    h5 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 23px;
+      text-align: center;
+      margin: 9px 0px;
     }
 
     .perfil-picture {
